@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Impacto de la IA en el empleo - 2030
 
 ## Descripción del proyecto
@@ -126,3 +127,6 @@ Posteriormente, ejecutar todas las celdas mediante la opción **Kernel → Resta
 **Docente:** Omar Salinas Silva  
 **Curso:** MCDI500 — Herramientas de Software Científico  
 **Universidad Andrés Bello — Magíster en Ciencia de Datos e Inteligencia Artificial**
+=======
+Prueba de colaboración numero 2
+>>>>>>> main
