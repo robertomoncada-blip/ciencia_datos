@@ -117,6 +117,19 @@ Posteriormente, ejecutar todas las celdas mediante la opción **Kernel → Resta
 
 ---
 
+## Commits informativos
+
+merge main into docs/readme-sebastian, Sebastian Navarrete
+docs: actualiza README con información del proyecto, Sebastian Navarrete
+Se completa el archivo .gitignore,  artu-knopke
+Se completa archivo requirements.txt,  artu-knopke
+Creación notebook, robertomoncada-blip
+Primera subida repositorio estructura base,  robertomoncada-blip
+
+
+
+---
+
 ## Integrantes
 
 - Arturo Knope Vera  
