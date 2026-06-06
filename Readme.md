@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # Impacto de la IA en el empleo - 2030
 
 ## Descripción del proyecto
@@ -37,16 +36,21 @@ AI Impact on Jobs 2030.
 ciencia_datos/
 │
 ├── data/
-│   ├── raw/               # Dataset original sin modificar
-│   └── processed/         # Datos tras limpieza y transformación
+│   ├── raw/                     # Dataset original sin modificar
+│   └── processed/               # Datos tras limpieza y transformación
 │
 ├── notebooks/
 │   └── F1_Definicion.ipynb
 │
 ├── src/
-│   └── cargar_datos.py           # Funciones reutilizables (carga de datos, etc.)
+│   ├── data_loading.py          # Función para carga del dataset
+│   ├── evaluation.py            # Funciones para evaluación de resultados
+│   ├── features.py              # Funciones para creación o transformación de variables
+│   ├── function.py              # Archivo auxiliar inicial del proyecto
+│   ├── modeling.py              # Funciones para modelado
+│   └── preprocessing.py         # Funciones para limpieza y preparación de datos
 │
-├── docs/                  # Documentación y referencias técnicas
+├── docs/                        # Documentación y referencias técnicas
 ├── README.md
 ├── requirements.txt
 └── .gitignore
