@@ -46,7 +46,6 @@ ciencia_datos/
 │   ├── data_loading.py          # Función para carga del dataset
 │   ├── evaluation.py            # Funciones para evaluación de resultados
 │   ├── features.py              # Funciones para creación o transformación de variables
-│   ├── function.py              # Archivo auxiliar inicial del proyecto
 │   ├── modeling.py              # Funciones para modelado
 │   └── preprocessing.py         # Funciones para limpieza y preparación de datos
 │
@@ -123,6 +122,7 @@ Posteriormente, ejecutar todas las celdas mediante la opción **Kernel → Resta
 
 ## Commits informativos
 
+docs: actualiza README con nueva estructura del repositorio
 merge main into docs/readme-sebastian, Sebastian Navarrete
 docs: actualiza README con información del proyecto, Sebastian Navarrete
 Se completa el archivo .gitignore,  artu-knopke
