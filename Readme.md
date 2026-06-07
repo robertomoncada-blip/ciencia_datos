@@ -1,7 +1,7 @@
 # Impacto de la IA en el empleo - 2030
 
 ## Descripción del proyecto
-
+etapa 2
 Este proyecto forma parte de la asignatura **MCDI500 – Herramientas de Software Científico**
 del **Magíster en Ciencia de Datos e Inteligencia Artificial** de la Universidad Andrés Bello.
 
