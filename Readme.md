@@ -122,7 +122,7 @@ Posteriormente, ejecutar todas las celdas mediante la opción **Kernel → Resta
 
 ## Commits informativos
 
-docs: actualiza README con nueva estructura del repositorio
+docs: actualiza README con nueva estructura del repositorio, Nicolás Soletic
 merge main into docs/readme-sebastian, Sebastian Navarrete
 docs: actualiza README con información del proyecto, Sebastian Navarrete
 Se completa el archivo .gitignore,  artu-knopke
