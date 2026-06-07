@@ -144,5 +144,5 @@ Primera subida repositorio estructura base,  robertomoncada-blip
 **Docente:** Omar Salinas Silva  
 **Curso:** MCDI500 — Herramientas de Software Científico  
 **Universidad Andrés Bello — Magíster en Ciencia de Datos e Inteligencia Artificial**
-=======
->>>>>>> main
+
+
