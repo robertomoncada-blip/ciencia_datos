@@ -19,6 +19,7 @@ def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
     return df
 
 def encoding_categorico(df):
+    """Aplica encoding ordinal a Education_Level y Risk_Category, y OHE a Job_Title."""
     # Education_Level (ordinal)
     if 'Education_Level' in df.columns:
         education_map = {
