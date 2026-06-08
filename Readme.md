@@ -40,7 +40,7 @@ ciencia_datos/
 │   └── processed/               # Datos tras limpieza y transformación
 │
 ├── notebooks/
-│   └── F1_Definicion.ipynb
+│   └── F2_Definicion.ipynb      # Notebook principal Fase 2
 │
 ├── src/
 │   ├── data_loading.py          # Función para carga del dataset
@@ -112,11 +112,27 @@ jupyter lab
 
 **Abrir y ejecutar el notebook:**
 
-Abrir el notebook:
+Abrir el notebook correspondiente a la fase activa:
 
-`notebooks/F1_Definicion.ipynb`
+- **Fase 2:** `notebooks/F2_Definicion.ipynb`
 
-Posteriormente, ejecutar todas las celdas mediante la opción **Kernel → Restart & Run All** para verificar la correcta configuración del entorno y la reproducibilidad del proyecto.
+Ejecutar todas las celdas mediante la opción **Kernel → Restart & Run All** para verificar la correcta configuración del entorno y la reproducibilidad del proyecto.
+
+---
+
+## Fase 2 — Pipeline de preprocesamiento
+
+En la Fase 2 se construyó un pipeline completo de procesamiento de datos que incluye:
+
+1. **Carga y exploración inicial** — diagnóstico del dataset (dimensiones, tipos, nulos, duplicados).
+2. **Limpieza de datos** — eliminación de duplicados e imputación de valores faltantes.
+3. **Transformación y encoding** — encoding ordinal para `Education_Level` y `Risk_Category`; One-Hot Encoding para `Job_Title`.
+4. **Feature engineering** — creación de `Skill_Index` (promedio de habilidades) y `High_Risk` (variable objetivo binaria).
+5. **Normalización** — escalamiento al rango [0, 1] con `MinMaxScaler` para variables de escala amplia.
+6. **Validación** — verificación de rangos, tipos y ausencia de nulos/duplicados.
+7. **Exportación** — dataset limpio exportado a `data/processed/AI_Impact_on_Jobs_2030_clean.csv`.
+
+Las funciones del pipeline están implementadas en `src/preprocessing.py` y son invocadas desde el notebook `notebooks/F2_Definicion.ipynb`.
 
 ---
 

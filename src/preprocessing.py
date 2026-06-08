@@ -62,6 +62,20 @@ def crear_features(df):
     return df
 
 
+def normalizar_datos(df):
+    """Escala columnas numéricas continuas al rango [0, 1] con MinMaxScaler."""
+    from sklearn.preprocessing import MinMaxScaler
+
+    cols_a_normalizar = ['Average_Salary', 'Years_Experience', 'Tech_Growth_Factor',
+                         'Education_Level', 'Risk_Category']
+    cols_presentes = [c for c in cols_a_normalizar if c in df.columns]
+
+    scaler = MinMaxScaler()
+    df[cols_presentes] = scaler.fit_transform(df[cols_presentes])
+
+    return df
+
+
 def validar_datos(df):
     """
     Validaciones de calidad de datos
@@ -93,6 +107,9 @@ def preprocessing_pipeline(df):
 
     df = crear_features(df)
     print("Features creadas")
+
+    df = normalizar_datos(df)
+    print("Normalización completada")
 
     validar_datos(df)
 
