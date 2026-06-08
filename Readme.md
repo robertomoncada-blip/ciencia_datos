@@ -135,19 +135,6 @@ En la Fase 2 se construyó un pipeline completo de procesamiento de datos que in
 Las funciones del pipeline están implementadas en `src/preprocessing.py` y son invocadas desde el notebook `notebooks/F2_Definicion.ipynb`.
 Para complementar la trazabilidad metodológica de esta fase, las decisiones técnicas del pipeline se documentan en `docs/decisiones_tecnicas_pipeline.md`. En dicho archivo se justifican las principales transformaciones aplicadas, incluyendo la imputación de valores faltantes, la codificación de variables categóricas, la creación de variables derivadas, la normalización con `MinMaxScaler` y las validaciones implementadas sobre el dataset procesado.
 
----
-
-## Commits informativos
-
-docs: actualiza README con nueva estructura del repositorio, Nicolás Soletic
-merge main into docs/readme-sebastian, Sebastian Navarrete
-docs: actualiza README con información del proyecto, Sebastian Navarrete
-Se completa el archivo .gitignore,  artu-knopke
-Se completa archivo requirements.txt,  artu-knopke
-Creación notebook, robertomoncada-blip
-Primera subida repositorio estructura base,  robertomoncada-blip
-
-
 
 ---
 
