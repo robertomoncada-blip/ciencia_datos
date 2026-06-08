@@ -1,5 +1,4 @@
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
 
 def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
     # eliminar duplicados
