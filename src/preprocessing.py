@@ -4,6 +4,7 @@ def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
     # crear copia para no modificar original
     df = df.copy()
     # eliminar duplicados
+    df = df.copy()
     df = df.drop_duplicates()
 
     # imputación Detecta columnas numéricas 
