@@ -9,9 +9,9 @@ El proyecto tiene como propósito analizar el posible impacto de la inteligencia
 sobre distintas ocupaciones laborales hacia el año 2030, utilizando herramientas de ciencia
 de datos aplicadas al conjunto de datos **AI Impact on Jobs 2030**.
 
-Durante esta primera fase se implementó un entorno de trabajo reproducible, una estructura
-organizada del repositorio, documentación técnica inicial y mecanismos de control de versiones
-que servirán de base para las etapas posteriores del proyecto.
+Durante las primeras fases del proyecto se implementó un entorno de trabajo reproducible, 
+una estructura organizada del repositorio, documentación técnica y un pipeline inicial de preprocesamiento 
+para la limpieza, transformación, validación y exportación del dataset.
 
 ---
 
@@ -133,6 +133,7 @@ En la Fase 2 se construyó un pipeline completo de procesamiento de datos que in
 7. **Exportación** — dataset limpio exportado a `data/processed/AI_Impact_on_Jobs_2030_clean.csv`.
 
 Las funciones del pipeline están implementadas en `src/preprocessing.py` y son invocadas desde el notebook `notebooks/F2_Definicion.ipynb`.
+Para complementar la trazabilidad metodológica de esta fase, las decisiones técnicas del pipeline se documentan en `docs/decisiones_tecnicas_pipeline.md`. En dicho archivo se justifican las principales transformaciones aplicadas, incluyendo la imputación de valores faltantes, la codificación de variables categóricas, la creación de variables derivadas, la normalización con `MinMaxScaler` y las validaciones implementadas sobre el dataset procesado.
 
 ---
 
