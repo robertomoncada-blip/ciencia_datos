@@ -3,6 +3,7 @@ from sklearn.preprocessing import LabelEncoder
 
 def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
     # eliminar duplicados
+    df = df.copy()
     df = df.drop_duplicates()
 
     # imputación Detecta columnas numéricas 
