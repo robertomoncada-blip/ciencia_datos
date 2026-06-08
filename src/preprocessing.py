@@ -1,7 +1,8 @@
 import pandas as pd
-from sklearn.preprocessing import LabelEncoder
 
 def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
+    # crear copia para no modificar original
+    df = df.copy()
     # eliminar duplicados
     df = df.drop_duplicates()
 
@@ -15,9 +16,8 @@ def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
         df[col] = df[col].fillna(df[col].mode()[0])
 
     return df
-def encoding_categorico(df):
-    import pandas as pd
 
+def encoding_categorico(df):
     # Education_Level (ordinal)
     if 'Education_Level' in df.columns:
         education_map = {
