@@ -1,8 +1,9 @@
 class Preprocesador:
-    def __init__(self, nombre, edad):
-        self.nombre = nombre
-        self.edad = edad
+    def __init__(self, dataset=None, ruta=None):
+        self.dataset = dataset
+        self.ruta = ruta
 
-    def saludar(self):
-        print(f"Hola, mi nombre es {self.nombre} y tengo {self.edad} años")
-
+    def cargar_datos(self):
+        import pandas as pd
+        self.dataset = pd.read_csv(self.ruta)
+        return self.dataset
