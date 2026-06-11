@@ -9,9 +9,7 @@ El proyecto tiene como propósito analizar el posible impacto de la inteligencia
 sobre distintas ocupaciones laborales hacia el año 2030, utilizando herramientas de ciencia
 de datos aplicadas al conjunto de datos **AI Impact on Jobs 2030**.
 
-Durante las primeras fases del proyecto se implementó un entorno de trabajo reproducible, 
-una estructura organizada del repositorio, documentación técnica y un pipeline inicial de preprocesamiento 
-para la limpieza, transformación, validación y exportación del dataset.
+En las primeras fases del proyecto se implementó un entorno de trabajo reproducible, una estructura organizada del repositorio, documentación técnica y un pipeline de preprocesamiento para la limpieza, transformación, validación y exportación del dataset (Fase 2). En la Fase 3 se encapsuló ese pipeline en una clase Python (`Preprocesador`), se implementaron algoritmos estructurados y recursivos (`merge_sort`, búsqueda binaria), y se midió la complejidad temporal y espacial comparando implementaciones alternativas.
 
 ---
 
@@ -40,14 +38,16 @@ ciencia_datos/
 │   └── processed/               # Datos tras limpieza y transformación
 │
 ├── notebooks/
-│   └── F2_Definicion.ipynb      # Notebook principal Fase 2
+│   ├── F2_Definicion.ipynb      # Notebook Fase 2: pipeline de preprocesamiento
+│   └── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
 │
 ├── src/
-│   ├── data_loading.py          # Función para carga del dataset
+│   ├── Preprocesador.py         # Clase POO con pipeline encapsulado (Fase 3)
+│   ├── data_loading.py          # Función para carga del dataset (Fase 2)
 │   ├── evaluation.py            # Funciones para evaluación de resultados
 │   ├── features.py              # Funciones para creación o transformación de variables
 │   ├── modeling.py              # Funciones para modelado
-│   └── preprocessing.py         # Funciones para limpieza y preparación de datos
+│   └── preprocessing.py         # Funciones para limpieza y preparación de datos (Fase 2)
 │
 ├── docs/                        # Documentación y referencias técnicas
 ├── README.md
@@ -115,6 +115,7 @@ jupyter lab
 Abrir el notebook correspondiente a la fase activa:
 
 - **Fase 2:** `notebooks/F2_Definicion.ipynb`
+- **Fase 3:** `notebooks/F3_Definicion.ipynb`
 
 Ejecutar todas las celdas mediante la opción **Kernel → Restart & Run All** para verificar la correcta configuración del entorno y la reproducibilidad del proyecto.
 
@@ -135,6 +136,41 @@ En la Fase 2 se construyó un pipeline completo de procesamiento de datos que in
 Las funciones del pipeline están implementadas en `src/preprocessing.py` y son invocadas desde el notebook `notebooks/F2_Definicion.ipynb`.
 Para complementar la trazabilidad metodológica de esta fase, las decisiones técnicas del pipeline se documentan en `docs/decisiones_tecnicas_pipeline.md`. En dicho archivo se justifican las principales transformaciones aplicadas, incluyendo la imputación de valores faltantes, la codificación de variables categóricas, la creación de variables derivadas, la normalización con `MinMaxScaler` y las validaciones implementadas sobre el dataset procesado.
 
+---
+
+## Fase 3 — Algoritmos, POO y mediciones de complejidad
+
+En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientada a objetos y se implementaron algoritmos estructurados y recursivos sobre el dataset, midiendo su complejidad temporal y espacial.
+
+### Clase `Preprocesador` (`src/Preprocesador.py`)
+
+| Método | Responsabilidad |
+|---|---|
+| `cargar_datos()` | Carga el CSV con validación de ruta y tipo |
+| `limpiar_datos(df)` | Elimina duplicados e imputa nulos (mediana / moda) |
+| `encoding_categorico(df)` | Encoding ordinal para variables con orden; OHE para `Job_Title` |
+| `crear_features(df)` | Crea `Skill_Index` y la variable objetivo binaria `High_Risk` |
+| `normalizar_datos(df)` | MinMaxScaler sobre variables continuas |
+| `validar_datos(df)` | Asserts de integridad (nulos, duplicados, rangos) |
+| `pipeline_completo()` | Secuencia completa de los métodos anteriores |
+| `exportar_dataset(df, path)` | Exporta el dataset procesado a CSV |
+
+### Algoritmos implementados (`notebooks/F3_Definicion.ipynb`)
+
+| Algoritmo | Complejidad | Tipo | Aplicación |
+|---|---|---|---|
+| Bucle fila a fila vs. vectorización pandas | O(n·k) ambas | Iterativo | Cálculo de `Skill_Index` |
+| Bubble Sort | O(n²) tiempo, O(1) espacio | Iterativo | Ordenamiento de referencia |
+| Merge Sort | O(n log n) tiempo, O(n) espacio | **Recursivo** | Ordenamiento y ranking de riesgo |
+| pandas `sort_values()` | O(n log n) — Tim Sort | Interno (C) | Ordenamiento optimizado |
+| Búsqueda binaria | O(log n) tiempo, O(log n) espacio | **Recursivo** | Segmentación por umbral de riesgo |
+
+### Criterios de optimización aplicados
+
+- **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 50–200× sobre bucles equivalentes.
+- **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado (n ≈ 5 000). La diferencia se amplifica con n creciente.
+- **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
+- **Complejidad espacial:** Bubble Sort usa O(1) espacio extra (in-place); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
 
 ---
 
