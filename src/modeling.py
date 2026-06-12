@@ -1,3 +1,11 @@
+"""
+Módulo encargado del proceso de entrenamiento del modelo predictivo.
+
+Contiene la función entrenar_modelo, responsable de separar los datos
+en particiones de entrenamiento y prueba, ajustar un clasificador
+basado en Random Forest y devolver los resultados listos para evaluar.
+"""
+
 import pandas as pd
 
 from sklearn.model_selection import train_test_split

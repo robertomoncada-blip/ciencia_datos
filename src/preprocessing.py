@@ -1,3 +1,12 @@
+"""
+Módulo encargado del preprocesamiento y transformación de datos.
+
+Reúne las funciones necesarias para limpiar, codificar, construir
+variables, normalizar y validar el conjunto de datos, exponiéndolas
+a través de un pipeline unificado listo para alimentar el modelo.
+"""
+
+
 import pandas as pd
 
 def limpiar_datos(df: pd.DataFrame) -> pd.DataFrame:
