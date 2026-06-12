@@ -176,7 +176,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 
 ## Integrantes
 
-- Arturo Knope Vera  
+- Arturo Knopke Vera  
 - Nicolás Soletic Cobos  
 - Roberto Moncada González
 - Sebastián Navarrete Soto  
