@@ -121,6 +121,17 @@ Ejecutar todas las celdas mediante la opción **Kernel → Restart & Run All** p
 
 ---
 
+## Solución de problemas
+
+| Problema | Causa probable | Solución |
+|---|---|---|
+| `ModuleNotFoundError: No module named 'Preprocesador'` | El path a `src/` no se agregó al entorno | Ejecutar las celdas desde el inicio; la primera celda de configuración añade `../src` al `sys.path`. |
+| `FileNotFoundError: ../data/raw/AI_Impact_on_Jobs_2030.csv` | El notebook se ejecuta desde un directorio distinto a `notebooks/` | Iniciar JupyterLab desde la raíz del repositorio y abrir el notebook desde `notebooks/`. Las rutas son relativas a esa carpeta. |
+| Las dependencias no coinciden | Entorno virtual no activado o sin instalar | Activar el `.venv` y ejecutar `pip install -r requirements.txt`. |
+| Los tiempos de `timeit` difieren de los del informe | Las mediciones dependen del hardware | Es esperable; la jerarquía de complejidad (O(n²) > O(n log n)) se mantiene en cualquier máquina. |
+
+---
+
 ## Fase 2 — Pipeline de preprocesamiento
 
 En la Fase 2 se construyó un pipeline completo de procesamiento de datos que incluye:
