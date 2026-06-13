@@ -187,7 +187,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 
 ### Criterios de optimización aplicados
 
-- **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 50–200× sobre bucles equivalentes.
+- **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 148× sobre bucles equivalentes.
 - **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado, como el utilizado en este proyecto (n = 3.000). La diferencia se amplifica con n creciente.
 - **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
 - **Complejidad espacial:** Bubble Sort usa O(1) espacio extra (in-place); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
