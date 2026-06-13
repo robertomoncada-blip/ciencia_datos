@@ -182,13 +182,13 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 | Bucle fila a fila vs. vectorización pandas | O(n·k) ambas | Iterativo | Cálculo de `Skill_Index` |
 | Bubble Sort | O(n²) tiempo, O(1) espacio | Iterativo | Ordenamiento de referencia |
 | Merge Sort | O(n log n) tiempo, O(n) espacio | **Recursivo** | Ordenamiento y ranking de riesgo |
-| pandas `sort_values()` | O(n log n) — Tim Sort | Interno (C) | Ordenamiento optimizado |
+| pandas `sort_values()` | O(n log n) aprox. — implementación optimizada | Interno (C) | Ordenamiento optimizado |
 | Búsqueda binaria | O(log n) tiempo, O(log n) espacio | **Recursivo** | Segmentación por umbral de riesgo |
 
 ### Criterios de optimización aplicados
 
 - **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 50–200× sobre bucles equivalentes.
-- **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado (n ≈ 5 000). La diferencia se amplifica con n creciente.
+- **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado, como el utilizado en este proyecto (n = 3.000). La diferencia se amplifica con n creciente.
 - **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
 - **Complejidad espacial:** Bubble Sort usa O(1) espacio extra (in-place); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
 
