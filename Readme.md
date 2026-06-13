@@ -2,7 +2,7 @@
 
 ## Descripción del proyecto
 
-Este proyecto forma parte de la asignatura **MCDI500 – Herramientas de Software Científico**
+Este proyecto forma parte de la asignatura **MCDI500 – Programación para la Ciencia de Datos**
 del **Magíster en Ciencia de Datos e Inteligencia Artificial** de la Universidad Andrés Bello.
 
 El proyecto tiene como propósito analizar el posible impacto de la inteligencia artificial
@@ -170,7 +170,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 | `limpiar_datos(df)` | Elimina duplicados e imputa nulos (mediana / moda) |
 | `encoding_categorico(df)` | Encoding ordinal para variables con orden; OHE para `Job_Title` |
 | `crear_features(df)` | Crea `Skill_Index` y la variable objetivo binaria `High_Risk` |
-| `normalizar_datos(df)` | MinMaxScaler sobre variables continuas |
+| `normalizar_datos(df)` | MinMaxScaler sobre variables numéricas u ordinales codificadas |
 | `validar_datos(df)` | Asserts de integridad (nulos, duplicados, rangos) |
 | `pipeline_completo()` | Secuencia completa de los métodos anteriores |
 | `exportar_dataset(df, path)` | Exporta el dataset procesado a CSV |
@@ -202,7 +202,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 - Sebastián Navarrete Soto  
 
 **Docente:** Omar Salinas Silva  
-**Curso:** MCDI500 — Herramientas de Software Científico  
+**Curso:** MCDI500 — Programación para la Ciencia de Datos 
 **Universidad Andrés Bello — Magíster en Ciencia de Datos e Inteligencia Artificial**
 
 
