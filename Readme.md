@@ -33,10 +33,8 @@ AI Impact on Jobs 2030.
 ```text
 ciencia_datos/
 │
-├── F3/                          # Fase 3: módulos POO y algoritmos recursivos
-│   └── src/
-│       ├── transformadores.py   # Jerarquía POO: Transformador (ABC), subclases, Pipeline
-│       └── algoritmos.py        # Algoritmos recursivos: merge_sort, busqueda_binaria
+├── F3/
+│   └── README.md                # Manifiesto de la Fase 3: entregables y cómo ejecutar
 │
 ├── data/
 │   ├── raw/                     # Dataset original sin modificar
@@ -47,12 +45,14 @@ ciencia_datos/
 │   └── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
 │
 ├── src/
-│   ├── Preprocesador.py         # Clase POO con pipeline encapsulado (Fase 3)
-│   ├── data_loading.py          # Función para carga del dataset (Fase 2)
+│   ├── transformadores.py       # (F3) Jerarquía POO: Transformador (ABC), subclases, Pipeline
+│   ├── algoritmos.py            # (F3) Algoritmos recursivos: merge_sort, busqueda_binaria
+│   ├── Preprocesador.py         # (F3) Clase POO con pipeline encapsulado
+│   ├── preprocessing.py         # (F2) Funciones de preprocesamiento
+│   ├── data_loading.py          # (F2) Función para carga del dataset
 │   ├── evaluation.py            # Funciones para evaluación de resultados
 │   ├── features.py              # Funciones para creación o transformación de variables
-│   ├── modeling.py              # Funciones para modelado
-│   └── preprocessing.py         # Funciones para limpieza y preparación de datos (Fase 2)
+│   └── modeling.py              # Funciones para modelado
 │
 ├── docs/                        # Documentación y referencias técnicas
 ├── README.md

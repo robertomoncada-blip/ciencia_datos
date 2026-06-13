@@ -9,3 +9,5 @@ __pycache__/
 .DS_Store
 # Variables de entorno y secretos
 .env
+# Documentos de trabajo (guías y rúbricas)
+*.docx
