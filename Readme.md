@@ -33,8 +33,6 @@ AI Impact on Jobs 2030.
 ```text
 ciencia_datos/
 │
-├── F3/
-│   └── README.md                # Manifiesto de la Fase 3: entregables y cómo ejecutar
 │
 ├── data/
 │   ├── raw/                     # Dataset original sin modificar
