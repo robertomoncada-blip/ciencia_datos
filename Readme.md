@@ -113,13 +113,13 @@ pip install -r requirements.txt
 jupyter lab
 ```
 
-> **Importante:** JupyterLab debe iniciarse siempre desde la carpeta raíz `ciencia_datos/`. Las rutas relativas del notebook (`../src`, `../F3/src`, `../data/`) dependen de que el kernel se ejecute desde `notebooks/`.
+> **Importante:** JupyterLab debe iniciarse siempre desde la carpeta raíz `ciencia_datos/`. Las rutas relativas del notebook (`../src`, `../data/`) dependen de que el kernel se ejecute desde `notebooks/`.
 
 **Abrir y ejecutar el notebook de Fase 3:**
 
 1. Abrir `notebooks/F3_Definicion.ipynb` desde el explorador de JupyterLab.
 2. Ejecutar todas las celdas con **Kernel → Restart & Run All**.
-3. El notebook carga automáticamente los módulos desde `src/` (Fase 2) y `F3/src/` (Fase 3).
+3. El notebook carga automáticamente los módulos desde `src/`, donde cada archivo identifica la fase a la que corresponde (F2 / F3).
 
 **Notebooks disponibles:**
 
