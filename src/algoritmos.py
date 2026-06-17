@@ -8,7 +8,7 @@ Algoritmos
 merge_sort        : O(n log n) tiempo, O(n) espacio — divide y vencerás recursivo
 merge_sort_key    : variante con función key y orden configurable
 busqueda_binaria  : O(log n) tiempo, O(log n) espacio — recursivo sobre lista ordenada
-bubble_sort       : O(n²) tiempo, O(1) espacio — referencia de comparación
+bubble_sort       : O(n²) tiempo, O(n) espacio — referencia de comparación (copia defensiva)
 """
 
 from __future__ import annotations
@@ -155,7 +155,7 @@ def busqueda_binaria(arr: list, objetivo, bajo: int = 0, alto: int = None) -> in
 # ---------------------------------------------------------------------------
 
 def bubble_sort(arr: list) -> list:
-    """Ordenamiento burbuja iterativo. O(n²) tiempo, O(1) espacio extra.
+    """Ordenamiento burbuja iterativo. O(n²) tiempo, O(n) espacio extra (copia defensiva).
 
     Se incluye únicamente como referencia para comparar con merge_sort
     y demostrar experimentalmente la diferencia entre O(n²) y O(n log n).

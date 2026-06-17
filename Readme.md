@@ -77,7 +77,7 @@ El archivo debe almacenarse en: `data/raw/AI_Impact_on_Jobs_2030.csv`
 
 ## Requisitos
 
-- Python 3.12.10
+- Python 3.12.13
 - Git
 - Jupyter Notebook o JupyterLab
 
@@ -187,7 +187,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 | Algoritmo | Complejidad | Tipo | Aplicación |
 |---|---|---|---|
 | Bucle fila a fila vs. vectorización pandas | O(n·k) ambas | Iterativo | Cálculo de `Skill_Index` |
-| Bubble Sort | O(n²) tiempo, O(1) espacio | Iterativo | Ordenamiento de referencia |
+| Bubble Sort | O(n²) tiempo, O(n) espacio | Iterativo | Ordenamiento de referencia |
 | Merge Sort | O(n log n) tiempo, O(n) espacio | **Recursivo** | Ordenamiento y ranking de riesgo |
 | pandas `sort_values()` | O(n log n) aprox. — implementación optimizada | Interno (C) | Ordenamiento optimizado |
 | Búsqueda binaria | O(log n) tiempo, O(log n) espacio | **Recursivo** | Segmentación por umbral de riesgo |
@@ -197,7 +197,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 - **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 148× sobre bucles equivalentes.
 - **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado, como el utilizado en este proyecto (n = 3.000). La diferencia se amplifica con n creciente.
 - **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
-- **Complejidad espacial:** Bubble Sort usa O(1) espacio extra (in-place); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
+- **Complejidad espacial:** Bubble Sort usa O(n) espacio extra (copia defensiva de la lista); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
 
 ---
 
@@ -211,8 +211,8 @@ mediante un storytelling en tres actos:
 | Acto | Gráfico | Hallazgo |
 |---|---|---|
 | **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los empleos enfrenta alto riesgo de automatización |
-| **2 — Conflicto** | Boxplot por nivel educativo | Mayor educación = menor probabilidad de automatización |
-| **3 — Resolución** | Dispersión IA vs. salario | Los empleos de alto salario con alta exposición a IA son los menos amenazados |
+| **2 — Conflicto** | Boxplot por nivel educativo | Las medianas de automatización son similares entre niveles educativos (rango 0.49–0.52) |
+| **3 — Resolución** | Dispersión IA vs. salario | Salario y exposición a IA no muestran correlación lineal con el riesgo de automatización |
 
 Las imágenes se exportan automáticamente a `docs/` al ejecutar el notebook.
 
