@@ -9,7 +9,7 @@ El proyecto tiene como propósito analizar el posible impacto de la inteligencia
 sobre distintas ocupaciones laborales hacia el año 2030, utilizando herramientas de ciencia
 de datos aplicadas al conjunto de datos **AI Impact on Jobs 2030**.
 
-En las primeras fases del proyecto se implementó un entorno de trabajo reproducible, una estructura organizada del repositorio, documentación técnica y un pipeline de preprocesamiento para la limpieza, transformación, validación y exportación del dataset (Fase 2). En la Fase 3 se encapsuló ese pipeline en una clase Python (`Preprocesador`), se implementaron algoritmos estructurados y recursivos (`merge_sort`, búsqueda binaria), y se midió la complejidad temporal y espacial comparando implementaciones alternativas.
+En las primeras fases del proyecto se implementó un entorno de trabajo reproducible, una estructura organizada del repositorio, documentación técnica y un pipeline de preprocesamiento para la limpieza, transformación, validación y exportación del dataset (Fase 2). En la Fase 3 se encapsuló ese pipeline en una clase Python (`Preprocesador`), se implementaron algoritmos estructurados y recursivos (`merge_sort`, búsqueda binaria), y se midió la complejidad temporal y espacial comparando implementaciones alternativas. En la Fase 4 se integraron todos los componentes anteriores, se construyeron tres visualizaciones analíticas con storytelling y se redactaron los resultados, discusión y conclusiones del proyecto.
 
 ---
 
@@ -40,7 +40,8 @@ ciencia_datos/
 │
 ├── notebooks/
 │   ├── F2_Definicion.ipynb      # Notebook Fase 2: pipeline de preprocesamiento
-│   └── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
+│   ├── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
+│   └── F4_Definicion.ipynb      # Notebook Fase 4: visualizaciones, resultados, trazabilidad
 │
 ├── src/
 │   ├── transformadores.py       # (F3) Jerarquía POO: Transformador (ABC), subclases, Pipeline
@@ -52,7 +53,12 @@ ciencia_datos/
 │   ├── features.py              # Funciones para creación o transformación de variables
 │   └── modeling.py              # Funciones para modelado
 │
-├── docs/                        # Documentación y referencias técnicas
+├── docs/
+│   ├── decisiones_tecnicas_pipeline.md
+│   ├── viz_acto1_contexto.png   # (F4) Gráfico 1: distribución de riesgo
+│   ├── viz_acto2_conflicto.png  # (F4) Gráfico 2: educación vs. automatización
+│   └── viz_acto3_resolucion.png # (F4) Gráfico 3: IA + salario vs. riesgo
+├── changelog.md                 # Trazabilidad de mejoras F1–F4
 ├── README.md
 ├── requirements.txt
 └── .gitignore
@@ -115,9 +121,9 @@ jupyter lab
 
 > **Importante:** JupyterLab debe iniciarse siempre desde la carpeta raíz `ciencia_datos/`. Las rutas relativas del notebook (`../src`, `../data/`) dependen de que el kernel se ejecute desde `notebooks/`.
 
-**Abrir y ejecutar el notebook de Fase 3:**
+**Abrir y ejecutar el notebook de Fase 4 (integrador):**
 
-1. Abrir `notebooks/F3_Definicion.ipynb` desde el explorador de JupyterLab.
+1. Abrir `notebooks/F4_Definicion.ipynb` desde el explorador de JupyterLab.
 2. Ejecutar todas las celdas con **Kernel → Restart & Run All**.
 3. El notebook carga automáticamente los módulos desde `src/`, donde cada archivo identifica la fase a la que corresponde (F2 / F3).
 
@@ -127,6 +133,7 @@ jupyter lab
 |---|---|---|
 | `notebooks/F2_Definicion.ipynb` | Fase 2 | Pipeline de preprocesamiento con funciones |
 | `notebooks/F3_Definicion.ipynb` | Fase 3 | Algoritmos, POO (herencia, polimorfismo), mediciones de complejidad |
+| `notebooks/F4_Definicion.ipynb` | Fase 4 | Integrador: visualizaciones analíticas, resultados, discusión, conclusiones y trazabilidad |
 
 ---
 
@@ -191,6 +198,28 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 - **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado, como el utilizado en este proyecto (n = 3.000). La diferencia se amplifica con n creciente.
 - **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
 - **Complejidad espacial:** Bubble Sort usa O(1) espacio extra (in-place); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
+
+---
+
+---
+
+## Fase 4 — Visualizaciones analíticas, resultados y trazabilidad
+
+En la Fase 4 se integraron todos los componentes anteriores y se comunicaron los hallazgos
+mediante un storytelling en tres actos:
+
+| Acto | Gráfico | Hallazgo |
+|---|---|---|
+| **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los empleos enfrenta alto riesgo de automatización |
+| **2 — Conflicto** | Boxplot por nivel educativo | Mayor educación = menor probabilidad de automatización |
+| **3 — Resolución** | Dispersión IA vs. salario | Los empleos de alto salario con alta exposición a IA son los menos amenazados |
+
+Las imágenes se exportan automáticamente a `docs/` al ejecutar el notebook.
+
+### Trazabilidad de mejoras
+
+El archivo `changelog.md` en la raíz del repositorio registra todos los cambios significativos
+por fase, con descripción del impacto técnico de cada mejora.
 
 ---
 
