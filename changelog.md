@@ -4,6 +4,44 @@ Registro de cambios significativos por fase. Formato inspirado en [Keep a Change
 
 ---
 
+## [F4 — Revisión] — 2026-06-17
+
+### Commits de esta revisión (rama f4_s4_etapa4)
+- `ba82760` — docs: registro de cambios en esta fase
+- `da2d841` — feat: se incorporan graficas candidatas
+- `5b2764d` — docs: se actualiza el readme
+- `35402f1` — docs: graficos generados del notebook
+- `09db74c` — docs: actualiza bibliografía del notebook
+
+### Fixed
+- Afirmaciones analíticas no respaldadas por datos:
+  - Acto 2: el boxplot mostraba medianas casi iguales (0.49–0.52, Δ=0.03) pero el texto afirmaba "factor protector". Corregido.
+  - Acto 3: correlaciones salario/exposición ≈ 0; eliminadas anotaciones "zona de potenciación/sustitución". Corregido.
+- Caso límite de validación: ahora introduce un NaN real y verifica `ImputarMediana.aplicar()`.
+- Complejidad espacial de Bubble Sort: O(1) → O(n) por copia defensiva (`arr = list(arr)`).
+- Referencia no verificable "foro técnico de la Semana 1" eliminada; sustituida por cita APA 7.
+- Afirmación "todos los empleos requieren adaptación" eliminada (no respaldada por los datos).
+
+### Added
+- Reestructuración del storytelling: Acto 3 = riesgo por ocupación (resultado bipolar: 5 ocupaciones > 98 %, 15 con 0 %); scatter plot relegado a V.d suplementario.
+- Citas APA 7 integradas en el texto del notebook (II.b, II.e, V, VIII).
+- Factor de aceleración corregido: "≈146×" → "más de 140×" (medición real ≈ 143×).
+- `docs/viz_acto3_suplementario.png`: gráfico suplementario salario × exposición IA.
+- Índice actualizado con V.d.
+- Trazabilidad de mejoras ampliada con filas de revisión F4.
+- Módulos heredados (`features.py`, `modeling.py`, `evaluation.py`) documentados en III.b.
+
+### Changed
+- `Readme.md`: Python 3.12.10 → 3.12.13; Bubble Sort O(1) → O(n); descripciones de Acto 2 y 3.
+- `src/algoritmos.py`: docstring de `bubble_sort` corregido a O(n) espacio.
+
+### Impact
+- Veracidad estadística de todas las afirmaciones analíticas.
+- Historia coherente con los datos reales (storytelling: contexto → conflicto → resolución con ocupación).
+- Código de validación técnica realmente ejercita las funciones del proyecto.
+
+---
+
 ## [F4] — 2026-06-16
 
 ### Added
@@ -14,7 +52,7 @@ Registro de cambios significativos por fase. Formato inspirado en [Keep a Change
   - Lista de verificación de reproducibilidad.
 - `docs/viz_acto1_contexto.png`: gráfico 1 — distribución de categorías de riesgo.
 - `docs/viz_acto2_conflicto.png`: gráfico 2 — nivel educativo vs. probabilidad de automatización.
-- `docs/viz_acto3_resolucion.png`: gráfico 3 — exposición IA vs. salario coloreado por riesgo.
+- `docs/viz_acto3_resolucion.png`: gráfico 3 — riesgo de automatización por tipo de ocupación.
 - `changelog.md`: este archivo de trazabilidad de mejoras.
 
 ### Changed
