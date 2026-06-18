@@ -57,7 +57,8 @@ ciencia_datos/
 │   ├── decisiones_tecnicas_pipeline.md
 │   ├── viz_acto1_contexto.png   # (F4) Gráfico 1: distribución de riesgo
 │   ├── viz_acto2_conflicto.png  # (F4) Gráfico 2: educación vs. automatización
-│   └── viz_acto3_resolucion.png # (F4) Gráfico 3: IA + salario vs. riesgo
+│   └── viz_acto3_resolucion.png # (F4) Gráfico 3: riesgo por ocupación
+    └── viz_acto3_suplementario.png # (F4) Gráfico complementario: salario × exposición IA
 ├── changelog.md                 # Trazabilidad de mejoras F1–F4
 ├── README.md
 ├── requirements.txt
@@ -194,7 +195,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 
 ### Criterios de optimización aplicados
 
-- **Vectorización sobre bucles:** las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. Medición con `timeit` demuestra aceleraciones de 148× sobre bucles equivalentes.
+- **Vectorización sobre bucles**: las operaciones pandas delegan a NumPy (C compilado), eliminando el overhead del intérprete Python. La medición con timeit muestra una aceleración de más de 140× sobre bucles equivalentes.
 - **Merge Sort vs. Bubble Sort:** Merge Sort O(n log n) supera a Bubble Sort O(n²) en datasets de tamaño moderado, como el utilizado en este proyecto (n = 3.000). La diferencia se amplifica con n creciente.
 - **Búsqueda binaria vs. lineal:** requiere ⌈log₂ n⌉ comparaciones en lugar de n; aplicable cuando los datos están ordenados.
 - **Complejidad espacial:** Bubble Sort usa O(n) espacio extra (copia defensiva de la lista); Merge Sort usa O(n) (sublistas). Medido con `tracemalloc`.
@@ -212,7 +213,7 @@ mediante un storytelling en tres actos:
 |---|---|---|
 | **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los empleos enfrenta alto riesgo de automatización |
 | **2 — Conflicto** | Boxplot por nivel educativo | Las medianas de automatización son similares entre niveles educativos (rango 0.49–0.52) |
-| **3 — Resolución** | Dispersión IA vs. salario | Salario y exposición a IA no muestran correlación lineal con el riesgo de automatización |
+| **3 — Resolución** | Barras de riesgo por ocupación | El riesgo se concentra por tipo de ocupación: 5 ocupaciones con 98–100 % en riesgo alto y 15 con 0 % |
 
 Las imágenes se exportan automáticamente a `docs/` al ejecutar el notebook.
 

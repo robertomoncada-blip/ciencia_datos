@@ -7,7 +7,6 @@ Registro de cambios significativos por fase. Formato inspirado en [Keep a Change
 ## [F4 — Revisión] — 2026-06-17
 
 ### Commits de esta revisión (rama f4_s4_etapa4)
-- `ba82760` — docs: registro de cambios en esta fase
 - `da2d841` — feat: se incorporan graficas candidatas
 - `5b2764d` — docs: se actualiza el readme
 - `35402f1` — docs: graficos generados del notebook
@@ -25,7 +24,7 @@ Registro de cambios significativos por fase. Formato inspirado en [Keep a Change
 ### Added
 - Reestructuración del storytelling: Acto 3 = riesgo por ocupación (resultado bipolar: 5 ocupaciones > 98 %, 15 con 0 %); scatter plot relegado a V.d suplementario.
 - Citas APA 7 integradas en el texto del notebook (II.b, II.e, V, VIII).
-- Factor de aceleración corregido: "≈146×" → "más de 140×" (medición real ≈ 143×).
+- Factor de aceleración expresado como "más de 140×" en texto narrativo, README e informe; el valor exacto de cada ejecución queda en la salida del notebook.
 - `docs/viz_acto3_suplementario.png`: gráfico suplementario salario × exposición IA.
 - Índice actualizado con V.d.
 - Trazabilidad de mejoras ampliada con filas de revisión F4.
