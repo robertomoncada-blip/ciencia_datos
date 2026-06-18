@@ -211,9 +211,9 @@ mediante un storytelling en tres actos:
 
 | Acto | Gráfico | Hallazgo |
 |---|---|---|
-| **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los empleos enfrenta alto riesgo de automatización |
+| **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los registros se clasifica en riesgo alto |
 | **2 — Conflicto** | Boxplot por nivel educativo | Las medianas de automatización son similares entre niveles educativos (rango 0.49–0.52) |
-| **3 — Resolución** | Barras de riesgo por ocupación | El riesgo se concentra por tipo de ocupación: 5 ocupaciones con 98–100 % en riesgo alto y 15 con 0 % |
+| **3 — Resolución** | Barras de riesgo por ocupación | El riesgo se concentra por tipo de ocupación: 5 tipos de ocupación con 98–100 % de sus registros en riesgo alto y 15 con 0 % |
 
 Las imágenes se exportan automáticamente a `docs/` al ejecutar el notebook.
 
