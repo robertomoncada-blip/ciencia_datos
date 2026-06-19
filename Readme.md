@@ -39,6 +39,7 @@ ciencia_datos/
 │   └── processed/               # Datos tras limpieza y transformación
 │
 ├── notebooks/
+├   ├── F1_Definicion.ipynb      # Notebook Fase 1: problemática, objetivos y exploración inicial
 │   ├── F2_Definicion.ipynb      # Notebook Fase 2: pipeline de preprocesamiento
 │   ├── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
 │   └── F4_Definicion.ipynb      # Notebook Fase 4: visualizaciones, resultados, trazabilidad
@@ -60,7 +61,7 @@ ciencia_datos/
 │   └── viz_acto3_resolucion.png # (F4) Gráfico 3: riesgo por ocupación
     └── viz_acto3_suplementario.png # (F4) Gráfico complementario: salario × exposición IA
 ├── changelog.md                 # Trazabilidad de mejoras F1–F4
-├── README.md
+├── Readme.md
 ├── requirements.txt
 └── .gitignore
 ```
@@ -132,6 +133,7 @@ jupyter lab
 
 | Notebook | Fase | Contenido |
 |---|---|---|
+| `notebooks/F1_Definicion.ipynb` | Fase 1 | Definición de la problemática, objetivos y exploración inicial del dataset |
 | `notebooks/F2_Definicion.ipynb` | Fase 2 | Pipeline de preprocesamiento con funciones |
 | `notebooks/F3_Definicion.ipynb` | Fase 3 | Algoritmos, POO (herencia, polimorfismo), mediciones de complejidad |
 | `notebooks/F4_Definicion.ipynb` | Fase 4 | Integrador: visualizaciones analíticas, resultados, discusión, conclusiones y trazabilidad |
@@ -211,7 +213,8 @@ mediante un storytelling en tres actos:
 
 | Acto | Gráfico | Hallazgo |
 |---|---|---|
-| **1 — Contexto** | Barras por categoría de riesgo | El 24.7 % de los empleos enfrenta alto riesgo de automatización |
+| **1 — Contexto** | Barras por categoría de riesgo | 740 de los 3.000 registros (24,7 %) se clasifican en riesgo alto de automatización
+ |
 | **2 — Conflicto** | Boxplot por nivel educativo | Las medianas de automatización son similares entre niveles educativos (rango 0.49–0.52) |
 | **3 — Resolución** | Barras de riesgo por ocupación | El riesgo se concentra por tipo de ocupación: 5 ocupaciones con 98–100 % en riesgo alto y 15 con 0 % |
 
