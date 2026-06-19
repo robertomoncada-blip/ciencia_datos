@@ -66,8 +66,9 @@ Registro de cambios significativos por fase. Formato inspirado en [Keep a Change
 ## [F3] — 2026-06-13
 
 ### Added
-- `src/Preprocesador.py`: clase POO con pipeline completo encapsulado (herencia, polimorfismo,
-  encapsulamiento). Métodos: `cargar_datos`, `limpiar_datos`, `encoding_categorico`,
+- `src/Preprocesador.py`: clase POO que encapsula el pipeline completo de la Fase 2 (encapsulamiento).
+  La herencia y el polimorfismo se implementan en `src/transformadores.py` (jerarquía `Transformador`
+  + `Pipeline`, patrón Strategy). Métodos: `cargar_datos`, `limpiar_datos`, `encoding_categorico`,
   `crear_features`, `normalizar_datos`, `validar_datos`, `pipeline_completo`, `exportar_dataset`.
 - `src/transformadores.py`: jerarquía `Transformador (ABC)` → `ImputarMediana`, `ImputarModa`,
   `EscalarMinMax`, `EscalarZScore` + clase `Pipeline` por composición (patrón Strategy).

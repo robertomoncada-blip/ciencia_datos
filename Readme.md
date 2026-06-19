@@ -39,7 +39,7 @@ ciencia_datos/
 │   └── processed/               # Datos tras limpieza y transformación
 │
 ├── notebooks/
-├   ├── F1_Definicion.ipynb      # Notebook Fase 1: problemática, objetivos y exploración inicial
+│   ├── F1_Definicion.ipynb      # Notebook Fase 1: problemática, objetivos y exploración inicial
 │   ├── F2_Definicion.ipynb      # Notebook Fase 2: pipeline de preprocesamiento
 │   ├── F3_Definicion.ipynb      # Notebook Fase 3: algoritmos, POO, mediciones de complejidad
 │   └── F4_Definicion.ipynb      # Notebook Fase 4: visualizaciones, resultados, trazabilidad
@@ -58,8 +58,8 @@ ciencia_datos/
 │   ├── decisiones_tecnicas_pipeline.md
 │   ├── viz_acto1_contexto.png   # (F4) Gráfico 1: distribución de riesgo
 │   ├── viz_acto2_conflicto.png  # (F4) Gráfico 2: educación vs. automatización
-│   └── viz_acto3_resolucion.png # (F4) Gráfico 3: riesgo por ocupación
-    └── viz_acto3_suplementario.png # (F4) Gráfico complementario: salario × exposición IA
+│   ├── viz_acto3_resolucion.png    # (F4) Gráfico 3: riesgo por ocupación
+│   └── viz_acto3_suplementario.png # (F4) Gráfico complementario: salario × exposición IA
 ├── changelog.md                 # Trazabilidad de mejoras F1–F4
 ├── Readme.md
 ├── requirements.txt
@@ -181,7 +181,7 @@ En la Fase 3 se encapsuló el pipeline de la Fase 2 en una clase Python orientad
 | `encoding_categorico(df)` | Encoding ordinal para variables con orden; OHE para `Job_Title` |
 | `crear_features(df)` | Crea `Skill_Index` y la variable objetivo binaria `High_Risk` |
 | `normalizar_datos(df)` | MinMaxScaler sobre variables numéricas u ordinales codificadas |
-| `validar_datos(df)` | Asserts de integridad (nulos, duplicados, rangos) |
+| `validar_datos(df)` | Asserts de integridad (vacío, nulos, duplicados). Los rangos [0,1] se verifican con aserciones adicionales en el notebook |
 | `pipeline_completo()` | Secuencia completa de los métodos anteriores |
 | `exportar_dataset(df, path)` | Exporta el dataset procesado a CSV |
 

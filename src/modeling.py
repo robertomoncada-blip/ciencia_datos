@@ -12,7 +12,13 @@ from sklearn.model_selection import train_test_split
 from sklearn.ensemble import RandomForestClassifier
 
 def entrenar_modelo(df):
-    features = df.drop(['High_Risk'], axis=1)
+    # Se excluyen las columnas que filtran el objetivo: High_Risk se deriva de
+    # Automation_Probability_2030 (umbral 0.7) y Risk_Category replica esos mismos
+    # intervalos. Conservarlas produciría target leakage.
+    features = df.drop(
+        ['High_Risk', 'Automation_Probability_2030', 'Risk_Category'],
+        axis=1,
+    )
     target = df['High_Risk']
 
     X_train, X_test, y_train, y_test = train_test_split(

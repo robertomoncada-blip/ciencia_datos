@@ -209,7 +209,7 @@ class Preprocesador:
         Returns
         -------
         pd.DataFrame
-            Dataset listo para modelado.
+            Dataset procesado (3.000 × 39): limpio, codificado, con features y normalizado.
         """
         df = self.cargar_datos()
         df = self.limpiar_datos(df)
